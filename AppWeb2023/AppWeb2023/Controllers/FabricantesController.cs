@@ -64,6 +64,21 @@ namespace AppWeb2023.Controllers
             return View(fabricante);
         }
 
+        // GET: Fabricantes/Details/5
+        public ActionResult Details(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Fabricante fabricante = context.Fabricantes.Find(id);
+            if (fabricante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(fabricante);
+        }
+
         // GET: Fabricantes/Delete/5
         public ActionResult Delete(long? id)
         {
