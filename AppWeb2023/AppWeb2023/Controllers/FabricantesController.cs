@@ -30,6 +30,7 @@ namespace AppWeb2023.Controllers
         {
             context.Fabricantes.Add(fabricante);
             context.SaveChanges();
+            TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi registrado";
             return RedirectToAction("Index");
         }
 
