@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WebAppProjetoB2023.Models.Categoria>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Listagem de CATEGORIAS";
+}
+@if (@TempData["Message"] != null)
+{
+    <div class="alert alert-info" role="alert">
+        @TempData["Message"]
+    </div>
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Relação de CATEGORIAS registrados
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoriaId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoriaId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Alterar", "Edit", new { id = item.CategoriaId }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.CategoriaId }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.CategoriaId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer panel-success">
+        @Html.ActionLink("Registrar uma nova CATEGORIA", "Create", null, new { @class = "btn btn-info" })
+        <!--Essas classes definem as cores(sucess sif=gnifica verde, danger vermelho, info azul claro)-->
+    </div>
+</div>
+@section styles{
+    <link href="@Url.Content("~/content/DataTables-1.10.2/css/dataTables.bootstrap.css")" rel="stylesheet" />
+}
+@section ScriptPage{
+    <script src="@Url.Content("~/scripts/DataTables-1.10.2/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/scripts/DataTables-1.10.2/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').dataTable({ "order": [[1, "asc"]] });
+            //localiza a tag table e ciona o dataTable, é possivel colocar parametros ou não;
+            //esses parametros idica que a ordem e 1 ascendente(ordem alfabetica); o 1 significa a coluna, o asc a ordem(ascendente). order indica que vai ser escrito a ordem
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liCategorias').addClass("active");
+        });
+    </script>
+}
