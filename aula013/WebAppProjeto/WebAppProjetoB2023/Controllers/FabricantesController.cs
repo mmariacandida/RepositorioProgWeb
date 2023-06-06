@@ -54,7 +54,9 @@ namespace WebAppProjetoB2023.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Fabricante fabricante = context.Fabricantes.Find(id);
+            //Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).
+                Include("Produtos.Categoria").First();
             if (fabricante == null)
             {
                 return HttpNotFound();
@@ -77,7 +79,7 @@ namespace WebAppProjetoB2023.Controllers
         {
             if (ModelState.IsValid)//verifica se esse objeto foi preenchido corretamente
             {
-                context.Entry(fabricante).State = EntityState.Modified;//marca o objeto de forma que indique que seu estado esta alterado
+                context.Entry(fabricante).State = EntityState.Modified;
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }

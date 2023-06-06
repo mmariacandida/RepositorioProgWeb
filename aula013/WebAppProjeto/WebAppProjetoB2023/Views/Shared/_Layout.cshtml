@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="page-header bg-danger">
+            <div class="page-header bg-danger" style="background-color:magenta !important;">
                 <h1>
                     Desenvolvimento em ASP.NET MVC
                     <small class="text-danger">
@@ -24,9 +24,9 @@
                 <ul class="nav nav-pills nav-stacked" style="padding: 0.3em;">
                     <!--<li id="liHome" role="presentation" class="active"><a href="#">Home</a></li>-->
                     <li id="liHome" role="presentation">@Html.ActionLink("Home", "Index", "Homes")</li>
-                    <li id="liFabricantes" role="presentation">@Html.ActionLink("Empresa", "Index", "Fabricantes")</li>
-                    <li id="liCategorias" role="presentation">@Html.ActionLink("Genêros", "Index", "Categorias")</li>
-                    <li id="liProdutos" role="presentation">@Html.ActionLink("Jogos", "Index", "Produtos")</li>
+                    <li id="liFabricantes" role="presentation">@Html.ActionLink("Categorias", "Index", "Fabricantes")</li>
+                    <li id="liCategorias" role="presentation">@Html.ActionLink("Fabricantes", "Index", "Categorias")</li>
+                    <li id="liProdutos" role="presentation">@Html.ActionLink("Produtos", "Index", "Produtos")</li>
                 </ul>
             </div>
             <div class="col-xs-9 col-md-9">
@@ -35,7 +35,7 @@
             </div>
         </div> <br />
         <div class="row">
-            <div class="col-xs-12 col-md-12 bg-danger">
+            <div class="col-xs-12 col-md-12 bg-danger" style="background-color:magenta !important;">
                 <small>Layout com Bootstrap</small>
             </div>
         </div>
