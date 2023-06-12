@@ -28,7 +28,7 @@ namespace WebAppProjetoB2023.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Fabricante fabricante = context.Fabricantes.Find(id);// se não achar retorna um valor nulo
+            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();// se não achar retorna um valor nulo
             if (fabricante == null)
             {
                 return HttpNotFound();
