@@ -1,0 +1,35 @@
+﻿@model WebAppProjetoB2023.Models.Fabricante
+
+@{
+    Layout =  "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    
+</head>
+<body>
+    <div>
+        <h4>Fabricante</h4>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.FabricanteId }) 
+        <span>|</span>
+        @Html.ActionLink("Voltar ao inicio", "Index")
+    </p>
+</body>
+</html>
