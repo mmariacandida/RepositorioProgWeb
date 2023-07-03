@@ -15,7 +15,7 @@ namespace WebAppProjetoB2023.Controllers
         // GET: Fabricantes
         public ActionResult Index()
         {
-            return View(context.Fabricantes.OrderBy(c => c.nome));
+            return View(context.Filmes.OrderBy(c => c.Titulo));
         }
 
         public ActionResult Create()

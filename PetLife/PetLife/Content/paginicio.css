@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Acme';
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header {
+    box-sizing: border-box;
+    height: 120px;
+    padding: 15px;
+    margin: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #B4E1FB;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+    #menu a {
+        display: block;
+        padding: 0.5rem;
+    }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    background-color: #B4E1FB;
+    padding: 20px;
+    margin: -13px;
+    margin-top: auto;
+}
+
+nav {
+    list-style-type: none;
+}
+
+.socialmedia {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .socialmedia li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+        .socialmedia li:last-child {
+            margin-right: 0;
+        }
+
+footer .contatos {
+    margin-bottom: 10px;
+}
+
+footer .local {
+    left: 500px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 180px; /* espaçamento do footer */
+    margin-top: 150px;
+}
+
+    .container a {
+        margin: 0 50px; /* espaçamento entre eles */
+    }
+
+.animais {
+    /*position: center;*/
+    position: relative;
+    margin-top: 110px;
+    margin-left: 250px;
+}

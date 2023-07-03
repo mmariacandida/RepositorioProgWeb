@@ -1,0 +1,157 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial</title>
+    <link rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/Principal.css">
+
+</head>
+<body>
+
+    <header>
+        <a href="@Url.Action("HomePage", "Home")"> <img src="~/Content/images/logo1.png"> </a>
+        <div class="button">
+            <a href="@Url.Action("Cadastrar", "Home")"><button>Cadastrar-se</button> </a>
+            <a href="@Url.Action("Logar", "Home")"><button class="login-button">Logar</button></a>
+        </div>
+    </header>
+
+    <img src="~/Content/images/image 33 1.png">
+    <hr>
+    <figure>
+        <img class="logo-img" src="~/Content/images/petlife.png">
+        <figcaption>Amor e cuidado para seu Pet</figcaption>
+    </figure>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="~/Content/images/image 39.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="~/Content/images/image 40.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="~/Content/images/image 41.png" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+          let slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+          }
+    </script>
+
+    <main>
+        <section>
+            <h1>Nossos procedimentos</h1>
+            <div class="naveg">
+                <figure>
+                    <a href="index.html"><img src="~/Content/images/image 39.png" width="457" alt="kkkkkkkkkk" /></a>
+                </figure>
+                <h2>Vacinação</h2>
+                <h3 class="severino">As consultas em clínicas veterinárias são essenciais para manter a saúde e o bem-estar dos animais de estimação. Elas oferecem um momento de interação entre o médico veterinário e o tutor do animal, permitindo que qualquer preocupação, sintoma ou necessidade de cuidados médicos sejam abordados.</h3>
+            </div>
+            <div class="naveg">
+                <figure>
+                    <a href="index.html"><img src="~/Content/images/image 40.png" width="457" alt="kkkkkkkkkk" /> </a>
+                </figure>
+                <h2>Exame</h2>
+                <h3 class="severino">As consultas em clínicas veterinárias são essenciais para manter a saúde e o bem-estar dos animais de estimação. Elas oferecem um momento de interação entre o médico veterinário e o tutor do animal, permitindo que qualquer preocupação, sintoma ou necessidade de cuidados médicos sejam abordados.</h3>
+            </div>
+
+            <div class="naveg">
+                <figure>
+                    <a href="index.html"><img src="~/Content/images/image 41.png" width="457" alt="kkkkkkkkkk" /></a>
+                </figure>
+                <h2>Consulta</h2>
+                <h3 class="severino">As consultas em clínicas veterinárias são essenciais para manter a saúde e o bem-estar dos animais de estimação. Elas oferecem um momento de interação entre o médico veterinário e o tutor do animal, permitindo que qualquer preocupação, sintoma ou necessidade de cuidados médicos sejam abordados.</h3>
+            </div>
+        </section>
+        <h1>Sobre nós</h1>
+        <section>
+            <div class="perso">
+                <figure>
+                    <a href="index.html"> <img src="~/Content/images/image 35.png" alt="" /></a>
+                    <figcaption class="texto">Veterinários</figcaption>
+                </figure>
+            </div>
+            <div class="perso">
+                <figure>
+                    <a href="index.html"> <img src="~/Content/images/image 36.png" alt="" /></a>
+                    <figcaption class="texto">Veterinários</figcaption>
+                </figure>
+            </div>
+            <div class="perso">
+                <figure>
+                    <a href="index.html"><img src="~/Content/images/image 37.png" alt="" /></a>
+                    <figcaption class="texto">Veterinários</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <h3 class="contatos">clinicapetlife@gmail.com
+        <style>
+            color: white;
+        </style></h3>
+        <nav>
+            <ol class="socialmedia">
+                <li><a href="https://www.instagram.com"><img src="~/Content/images/instagram.png" alt="instagram" width="25px" /></a></li>
+                <li><a href="https://www.facebook.com"><img src="~/Content/images/facebook.png" alt="facebook" width="25px" /></a></li>
+                <li><a href="https://www.whatsapp.com"><img src="~/Content/images/zap zap.png" alt="whatsapp" width="25px" /></a></li>
+            </ol>
+        </nav>
+    </footer>
+</body>
+</html>

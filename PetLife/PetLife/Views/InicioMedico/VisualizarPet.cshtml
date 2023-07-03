@@ -1,0 +1,28 @@
+﻿@model PetLife.Models.Pet
+
+@{
+    ViewBag.Title = "Visualizar Pet";
+}
+
+<h2>Visualizar Pet</h2>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Raça</th>
+        <th>Idade</th>
+        <th>Espécie</th>
+        <th>Sexo</th>
+        <th>Castrado</th>
+    </tr>
+    <tr>
+        <td>@Model.Nome</td>
+        <td>@Model.Raca</td>
+        <td>@Model.Idade</td>
+        <td>@Model.Especie</td>
+        <td>@Model.Sexo</td>
+        <td>@Model.Castrado</td>
+    </tr>
+</table>
+
+@Html.ActionLink("Voltar para a lista", "ManterPets")

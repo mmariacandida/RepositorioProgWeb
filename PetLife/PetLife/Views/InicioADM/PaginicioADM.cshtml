@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/paginicio.css">
+    <title>Dashboard do ADM</title>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="mantercadfunc.html"><img src="~/Content/images/logo.png" alt="Logo da página" width="130" height="120"></a></h1>
+        <nav id="nav">
+            <ul id="menu" role="menu">
+                <li><a href="@Url.Action("PaginicioADM", "InicioADM")">Início</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <img src="~/Content/images/filmes.png" alt="filmes em cartaz" class="filmes">
+        <div class="container">
+            <a href="@Url.Action("CadastrarFilme", "InicioADM")"><img src="~/Content/images/cadastrar filmes.png" alt="Descrição da imagem" class="cadastrarfilme"></a>
+            <a href="@Url.Action("Lfilmes", "InicioADM")"><img src="~/Content/images/cadastro de filmes.png" alt="Descrição da imagem" class="cadastrodefilme"></a>
+        </div>
+    </main>
+    <footer>
+        <nav>
+            <ol class="socialmedia">
+                <li><a href="https://www.instagram.com"><img src="~/Content/images/instagram.png" alt="instagram" width="25px" /></a></li>
+                <li><a href="https://www.facebook.com"><img src="~/Content/images/facebook.png" alt="facebook" width="25px" /></a></li>
+            </ol>
+        </nav>
+    </footer>
+</body>
+</html>

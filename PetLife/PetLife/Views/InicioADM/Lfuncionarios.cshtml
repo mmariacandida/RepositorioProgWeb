@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/Lfuncionarios.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="@Url.Action("HomePage", "Home")"><img src="~/Content/images/logopetlife.png" alt="Logo da página" width="150" height="150"></a></h1>
+        <nav id="nav">
+            <ul id="menu" role="menu">
+                <li><a href="@Url.Action("PaginicioADM", "InicioADM")">Início</a></li>
+                <li><a href="#">Profissionais</a></li>
+                <li><a href="paginicio.html">Serviços</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="title">Funcionários</h1>
+        <div class="search-form">
+            <label for="cpf"></label>
+            <input type="text" id="cpf" placeholder="Digite o CPF">
+            <button onclick="searchPerson()">
+                <img src="~/Content/images/lupa.png" alt="Lupa" width="20" height="20">
+            </button>
+        </div>
+
+        <div id="personDetails" class="person-details"></div>
+        <script>
+            function searchPerson() {
+                var cpf = document.getElementById("cpf").value;
+
+                // Simulação de requisição assíncrona ao servidor
+                setTimeout(function () {
+                    // Supondo que o servidor retornou um objeto JSON com os dados da pessoa
+                    var response = {
+                        foto: "caminho/para/sua/imagem-foto.png",
+                        nome: "Yuri Mateus Lira da Costa",
+                        dataNascimento: "11/09/2001",
+                        cpf: "123.456.789-00",
+                        telefone: "(84) 1234-5678",
+                        email: "yurilira@gmail.com",
+                        formacao: "Doutorado em medicina veterinaria",
+                        empregoAnterior: "seres clinica veterinaria",
+                        especialidade: "cardiologia veterinaria"
+                    };
+
+                    // Atualiza a ficha da pessoa na pagina
+                    displayPersonDetails(response);
+                }, 1000); // Simula um atraso de 1 segundo na resposta do servidor
+            }
+
+            function displayPersonDetails(person) {
+                var personDetailsDiv = document.getElementById("personDetails");
+
+                // Limpa o conteudo anterior
+                personDetailsDiv.innerHTML = "";
+
+                if (person) {
+                    var personCard = document.createElement("div");
+                    personCard.classList.add("person-card");
+
+                    var personImg = document.createElement("img");
+                    personImg.src = person.foto; // Define a imagem com base no caminho fornecido na resposta do servidor
+                    personImg.alt = "Foto de " + person.nome;
+                    personCard.appendChild(personImg);
+
+                    var personInfo = document.createElement("div");
+                    personInfo.classList.add("info");
+
+                    var nomeParagraph = document.createElement("h2");
+                    nomeParagraph.innerText = person.nome; // Usar innerText em vez de textContent
+                    personInfo.appendChild(nomeParagraph);
+
+                    var idadeParagraph = document.createElement("p");
+                    idadeParagraph.textContent = "Idade: " + calculateAge(person.dataNascimento);
+                    personInfo.appendChild(idadeParagraph);
+
+                    personCard.appendChild(personInfo);
+
+                    personDetailsDiv.appendChild(personCard);
+
+                    var detailsDiv = document.createElement("div");
+                    personInfo.classList.add("informacao");
+
+
+                    var dataNascimentoParagraph = document.createElement("p");
+                    dataNascimentoParagraph.textContent = "Data de Nascimento: " + person.dataNascimento;
+                    detailsDiv.appendChild(dataNascimentoParagraph);
+
+                    var cpfParagraph = document.createElement("p");
+                    cpfParagraph.textContent = "CPF: " + person.cpf;
+                    detailsDiv.appendChild(cpfParagraph);
+
+                    var telefoneParagraph = document.createElement("p");
+                    telefoneParagraph.textContent = "Telefone: " + person.telefone;
+                    detailsDiv.appendChild(telefoneParagraph);
+
+                    var emailParagraph = document.createElement("p");
+                    emailParagraph.textContent = "Email: " + person.email;
+                    detailsDiv.appendChild(emailParagraph);
+
+                    var formacaoParagraph = document.createElement("p");
+                    formacaoParagraph.textContent = "Formação: " + person.formacao;
+                    detailsDiv.appendChild(formacaoParagraph);
+
+                    var empregoAnteriorParagraph = document.createElement("p");
+                    empregoAnteriorParagraph.textContent = "Emprego Anterior: " + person.empregoAnterior;
+                    detailsDiv.appendChild(empregoAnteriorParagraph);
+
+                    var especialidadeParagraph = document.createElement("p");
+                    especialidadeParagraph.textContent = "Especialidade: " + person.especialidade;
+                    detailsDiv.appendChild(especialidadeParagraph);
+
+                    personDetailsDiv.appendChild(detailsDiv);
+
+                    // Exibe as informacoes da pessoa
+                    personDetailsDiv.classList.add("visible");
+                } else {
+                    var errorMessage = document.createElement("p");
+                    errorMessage.textContent = "CPF não encontrado.";
+                    personDetailsDiv.appendChild(errorMessage);
+
+                    // Oculta as informacoes da pessoa
+                    personDetailsDiv.classList.remove("visible");
+                }
+            }
+
+            function calculateAge(dateString) {
+                var today = new Date();
+                var birthDate = new Date(dateString);
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var monthDiff = today.getMonth() - birthDate.getMonth();
+
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+
+                return age;
+            }
+        </script>
+
+        </div>
+        <div class="button-container">
+            <button class="edit-button">Editar</button>
+            <button class="delete-button">Excluir</button>
+        </div>
+    </main>
+    <footer>
+        <h3 class="contatos">
+            clinicapetlife@gmail.com
+            <style>
+                color: white;
+            </style>
+        </h3>
+        <nav>
+            <ol class="socialmedia">
+                <li><a href="https://www.instagram.com"><img src="~/Content/images/instagram.png" alt="instagram" width="25px" /></a></li>
+                <li><a href="https://www.facebook.com"><img src="~/Content/images/facebook.png" alt="facebook" width="25px" /></a></li>
+                <li><a href="https://www.whatsapp.com"><img src="~/Content/images/zap zap.png" alt="whatsapp" width="25px" /></a></li>
+            </ol>
+        </nav>
+    </footer>
+</body>
+</html>

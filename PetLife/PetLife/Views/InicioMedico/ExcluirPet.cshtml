@@ -1,0 +1,38 @@
+﻿@model PetLife.Models.Pet
+
+@{
+    ViewBag.Title = "Excluir Pet";
+}
+
+<h2>Excluir Pet</h2>
+
+<p>Você tem certeza de que deseja excluir o seguinte pet?</p>
+
+<div>
+    <h4>Pet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Nome:</dt>
+        <dd>@Model.Nome</dd>
+        <dt>Raça:</dt>
+        <dd>@Model.Raca</dd>
+        <dt>Idade:</dt>
+        <dd>@Model.Idade</dd>
+        <dt>Espécie:</dt>
+        <dd>@Model.Especie</dd>
+        <dt>Sexo:</dt>
+        <dd>@Model.Sexo</dd>
+        <dt>Castrado:</dt>
+        <dd>@Model.Castrado</dd>
+    </dl>
+
+    @using (Html.BeginForm("ExcluirPetConfirmed", "InicioMedico", new { id = Model.Id }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+            @Html.ActionLink("Cancelar", "ManterPets", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

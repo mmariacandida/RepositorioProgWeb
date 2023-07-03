@@ -1,0 +1,102 @@
+/* CSS PAGINA INICIAL */
+
+/* Identificador universal*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a,
+ul,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+header .post {
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+}
+
+header nav {
+    background-color: #B4E1FB;
+    width: 100%;
+    padding: 0px 60px 0px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    header nav ul {
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+    }
+
+        header nav ul a {
+            padding: 10px;
+            transition: 1s;
+        }
+
+            header nav ul a:hover {
+                border-bottom: 2px solid;
+            }
+
+main .servcos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+    main .servcos div {
+        padding: 15px;
+        display: flex;
+        width: 250px;
+        align-items: center;
+        background-color: #B4E1FB;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+        main .servcos div a {
+            /*  textos */
+            font-family: 'IM FELL English', Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 25px;
+            margin-left: 15px;
+            color: #000000;
+        }
+
+footer {
+    margin-top: 15em;
+    background-color: #B4E1FB;
+    padding: 20px;
+}
+
+    footer .contato {
+        display: flex;
+        flex-direction: column;
+        height: 80px;
+        justify-content: space-between;
+    }
+
+    footer .redes_social {
+        display: flex;
+        padding-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+        footer .redes_social div {
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+        }

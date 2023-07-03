@@ -1,6 +1,6 @@
-﻿
+﻿@model IEnumerable<WebAppProjetoB2023.Models.Filme>
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -9,9 +9,35 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+
 </head>
 <body>
-    <div> 
-    </div>
+    <p>
+        @Html.ActionLink("Criar nova fabricante", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.FilmeId }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.FilmeId }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.FilmeId })
+                </td>
+            </tr>
+        }
+
+    </table>
 </body>
 </html>
+

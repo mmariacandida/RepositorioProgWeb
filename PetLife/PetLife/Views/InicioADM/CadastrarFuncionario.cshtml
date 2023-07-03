@@ -1,0 +1,150 @@
+﻿@model PetLife.Models.Funcionario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/mantercad.css">
+    <script type="text/javascript" src="~/Content/mantercadfuncjava.js"></script>
+    <title>Cadastrar Funcionário</title>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="@Url.Action("PaginicioADM", "InicioADM")"><img src="~/Content/images/logopetlife.png" alt="Logo da página" width="130" height="120"></a></h1>
+        <nav id="nav">
+            <ul id="menu" role="menu">
+                <li><a href="@Url.Action("PaginicioADM", "InicioADM")">Início</a></li>
+                <li><a href="#">Profissionais</a></li>
+                <li><a href="paginicio.html">Serviços</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="title">Cadastrar Funcionário</h1>
+        <div class="linha">
+            <hr>
+        </div>
+        <h1 class="titletwo">Dados do Funcionário: </h1>
+
+        <div class="upload-container">
+            <label for="upload-input" class="upload-label">
+                <span class="upload-icon"></span>
+            </label>
+            <input type="file" id="upload-input" class="upload-input" onchange="handleFileSelect(event)">
+        </div>
+
+        <h2 class="titletree">Adicione uma foto</h2>
+
+        <form action="@Url.Action("Lfuncionarios", "InicioADM")" method="post">
+            <div class="container">
+                <label for="nome">Nome Completo: </label>
+                <input type="text" id="nome" name="Nome" class="linha-digitavel" required>
+            </div>
+
+            <div class="container">
+                <label for="nome">Data de Nascimento: </label>
+                <input type="date" id="dataNascimento" name="DataNascimento" required>
+            </div>
+
+            <div class="container">
+                <label for="cpf">CPF: </label>
+                <div class="linha-digitavel1" contenteditable="true" placeholder="Digite o CPF" required></div>
+            </div>
+
+            <div class="container">
+                <label for="cargo">Número de Telefone: </label>
+                <div class="linha-digitavel3" contenteditable="true" placeholder="Digite o número de telefone" required></div>
+            </div>
+
+            <div class="container">
+                <label for="cpf">Email: </label>
+                <div class="linha-digitavel4" contenteditable="true" placeholder="Digite o email" required></div>
+            </div>
+
+            <div class="container">
+                <label for="Formação">Formação: </label>
+                <select class="linha-digitavel10" required>
+                    <option value="" disabled selected>Selecione uma formação</option>
+                    <option value="opcao1">Ensino Fundamental Incompleto</option>
+                    <option value="opcao2">Enisno Fundamental Completo</option>
+                    <option value="opcao3">Ensino Médio Incompleto</option>
+                    <option value="opcao4">Ensino Médio Completo</option>
+                    <option value="opcao5">Ensino Superior</option>
+                    <option value="opcao6">Pós-Graduação</option>
+                </select>
+            </div>
+
+            <div class="container">
+                <label for="emprego anterior">Cargo: </label>
+                <div class="linha-digitavel6" contenteditable="true" placeholder="Digite o cargo" required></div>
+            </div>
+
+            <div class="container">
+                <label for="especialidade">Emprego anterior: </label>
+                <div class="linha-digitavel7" contenteditable="true" placeholder="Digite o emprego anterior" required></div>
+            </div>
+
+            <div class="container">
+                <label for="nome">Especialidade:</label>
+                <select class="linha-digitavel11" required>
+                    <option value="" disabled selected>Selecione uma especialidade médica:</option>
+                    <option value="opcao1">Cirurgia</option>
+                    <option value="opcao2">Homeopatia</option>
+                    <option value="opcao3">Acupuntura</option>
+                    <option value="opcao4">Anestesia</option>
+                    <option value="opcao5">Patologia</option>
+                    <option value="opcao6">Dermatologia</option>
+                    <option value="opcao7">N/A</option>
+                </select>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="veterinario" value="nao-veterinario">
+                        Não é veterinário
+                    </label>
+                </div>
+            </div>
+        </form>
+
+        <div class="linha2">
+            <hr>
+        </div>
+
+        <h1 class="titlefour">Dados de Acesso ao sistema:</h1>
+
+        <form action="@Url.Action("CadastrarFuncionario", "areaADM")" method="post" class="severino">
+            <div class="container1">
+                <label for="usuario">Usuário: </label>
+                <div class="linha-digitavel12" contenteditable="true" placeholder="Digite o nome de usuário" required></div>
+            </div>
+
+            <div class="container1">
+                <label for="senha">Senha: </label>
+                <div class="linha-digitavel13" contenteditable="true" placeholder="Digite o senha" required></div>
+            </div>
+
+            <input type="submit" id="btnCadastrar" value="Cadastrar" onclick="exibirMensagem()">
+        </form>
+    </main>
+    <footer>
+        <h3 class="contatos">
+            clinicapetlife@gmail.com
+            <style>
+                color: white;
+            </style>
+        </h3>
+        <nav>
+            <ol class="socialmedia">
+                <li><a href="https://www.instagram.com"><img src="~/Content/images/instagram.png" alt="instagram" width="25px" /></a></li>
+                <li><a href="https://www.facebook.com"><img src="~/Content/images/facebook.png" alt="facebook" width="25px" /></a></li>
+                <li><a href="https://www.whatsapp.com"><img src="~/Content/images/zap zap.png" alt="whatsapp" width="25px" /></a></li>
+            </ol>
+        </nav>
+    </footer>
+</body>
+</html>

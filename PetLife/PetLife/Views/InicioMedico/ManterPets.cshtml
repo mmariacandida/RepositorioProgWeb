@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PetLife.Models.Pet>
+
+@{
+    ViewBag.Title = "Manter Pets";
+}
+
+<h2>Manter Pets</h2>
+
+<p>
+    @Html.ActionLink("Novo Pet", "CadastrarPet")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Raça</th>
+        <th>Idade</th>
+        <th>Espécie</th>
+        <th></th>
+    </tr>
+    @foreach (var pet in Model)
+    {
+        <tr>
+            <td>@pet.Nome</td>
+            <td>@pet.Raca</td>
+            <td>@pet.Idade</td>
+            <td>@pet.Especie</td>
+            <td>
+                @Html.ActionLink("Editar", "EditarPet", new { id = pet.Id }) |
+                @Html.ActionLink("Visualizar", "VisualizarPet", new { id = pet.Id } ) |
+                @Html.ActionLink("Excluir", "ExcluirPet", new { id = pet.Id })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--  Link com Font IM FELL English-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Life</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!--Navegação Header-->
+            <h1><a href="@Url.Action("HomePage", "Home")"><img width="30%" src="~/Content/images/logopetlife.png" alt="petlife-logo"></a> </h1>
+            <ul>
+                <li><a href="@Url.Action("HomeMedico", "InicioMedico")">Inicio</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+        <img class="post" src="~/Content/images/post_main.png" alt="">
+    </header>
+
+    <main>
+        <section class="servcos">
+            <!--Serviços e atendimento-->
+            <div>
+                <img src="~/Content/images/pets cadastrados.png" alt="">
+                <p> <a href="@Url.Action("PetsCadastrados", "InicioMedico")"> Pets cadastrados </a> </p>
+            </div>
+
+            <div>
+                <img src="~/Content/images/agenda pessoal.png" alt="">
+                <p>  <a href="#"> Agenda Pessoal</a></p>
+            </div>
+
+            <div>
+                <img src="~/Content/images/pets cadastrados.png" alt="">
+                <p> <a href="#"> Emitir  avaliação</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contato">
+            <!--Contatos -->
+            <h2>contatos:</h2>
+            <p>(55) 84 98754-8632</p>
+            <p>clinicapetlife@gmail.com</p>
+        </div>
+
+        <div class="redes_social">
+            <!-- Redes Social e endereço-->
+            <div>
+                <!--Redes social-->
+                <a href="https://www.instagram.com/">  <img width="20px" height="20px" src="~/Content/images/instagram.png"alt="Logo instagram"></a>
+                <a href="https://www.facebook.com/">  <img width="20px" height="20px" src="~/Content/images/facebook.png" alt="Logo facebook"></a>
+                <a href="https://web.whatsapp.com/">  <img width="20px" height="20px" src="~/Content/images/zap zap.png" alt="Logo whatsapp"></a>
+
+            </div>
+            <address> Rua Amália Rodrigues, 213, Parati, Natal-RN,59135460</address>
+        </div>
+    </footer>
+</body>
+</html>

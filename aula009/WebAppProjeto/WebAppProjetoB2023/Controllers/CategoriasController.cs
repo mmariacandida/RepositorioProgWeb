@@ -17,6 +17,7 @@ namespace WebAppProjetoB2023.Controllers
         // GET: Categorias
         public ActionResult Index()
         {
+
             return View(context.Categorias.OrderBy(c => c.Nome));
         }
         public ActionResult Create()

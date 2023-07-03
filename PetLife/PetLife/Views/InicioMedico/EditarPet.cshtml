@@ -1,0 +1,41 @@
+﻿@model PetLife.Models.Pet
+
+@{
+    ViewBag.Title = "Editar Pet";
+}
+
+<h2>Editar Pet</h2>
+
+@using (Html.BeginForm("EditarPet", "InicioMedico", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nome)
+        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Raca)
+        @Html.TextBoxFor(model => model.Raca, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Idade)
+        @Html.TextBoxFor(model => model.Idade, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Especie)
+        @Html.TextBoxFor(model => model.Especie, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Sexo)
+        @Html.TextBoxFor(model => model.Sexo, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Castrado)
+        @Html.TextBoxFor(model => model.Castrado, new { @class = "form-control" })
+    </div
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}

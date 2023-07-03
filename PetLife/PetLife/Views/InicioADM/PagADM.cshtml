@@ -1,0 +1,33 @@
+﻿
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/paginicio.css">
+    <title>Dashboard (página inicial) do ADM</title>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="mantercadfilmes.html"><img src="~/Content/images/logo.png" alt="Logo da página" width="130" height="120"></a></h1>
+        <nav id="nav">
+            <ul id="menu" role="menu">
+                <li><a href="@Url.Action("PagADM", "InicioADM")">Início</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <img src="~/Content/images/animals.png" alt="Animais de variadas espécies" class="animais">
+        <div class="container">
+            <a href="@Url.Action("CadastrarFilmes", "InicioADM")"><img src="~/Content/images/cadastrar filmes.png" alt="Descrição da imagem" class="cadastrarfilme"></a>
+            <a href="@Url.Action("Lfilmes", "InicioADM")"><img src="~/Content/images/cadastro de filmes.png" alt="Descrição da imagem" class="cadastrodefilme"></a>
+        </div>
+    </main>
+    <footer>
+      <p>redes</p>
+    </footer>
+</body>
+</html>

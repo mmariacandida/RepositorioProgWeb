@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Prompt:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Acme';
+}
+
+    body::after {
+        content: "";
+        position: absolute;
+        top: 235px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        background-position: 48%;
+        z-index: -1;
+    }
+
+header {
+    box-sizing: border-box;
+    height: 120px;
+    padding: 20px;
+    margin: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hwb(214 58% 9%);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+    a:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+    #menu a {
+        display: block;
+        padding: 0.5rem;
+    }
+
+.search-form {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 6em;
+    margin-left: 47em;
+    justify-content: flex-end;
+}
+
+    .search-form input[type="text"] {
+        flex: 1;
+        border: none;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+button {
+    border: none;
+}
+
+.title {
+    position: absolute;
+    top: 20%;
+    margin-left: 2em;
+    font-family: 'Prompt', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.combobox {
+    position: relative;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.combobox.is-animating::after {
+    animation: rotate 1s linear infinite;
+}
+/* Estilos para tela pequena */
+@media only screen and (max-width: 600px) {
+    /* Estilos específicos para telas pequenas */
+}
+
+/* Estilos para tela média */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Estilos específicos para telas médias */
+}
+
+/* Estilos para tela grande */
+@media only screen and (min-width: 1025px) {
+    /* Estilos específicos para telas grandes */
+}
+
+.upload-container {
+    position: absolute;
+    top: 330px;
+    left: 50px;
+}
+
+.upload-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.button-container {
+    display: flex;
+}
+
+.edit-button,
+.delete-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 65px;
+    margin-left: 60em;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 5em;
+}
+
+.edit-button {
+    background-color: rgb(49, 144, 221);
+    margin-right: -58em;
+}
+
+.delete-button {
+    background-color: hsl(240, 84%, 44%);
+}
+
+.person-card {
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+    .person-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-color: #4594ee;
+    }
+
+    .person-card .info {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .person-card .info p {
+            margin: 5px 0;
+        }
+
+.person-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Define a altura total da janela de visualização */
+    margin-top: 20px;
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    border: 1px solid gray;
+    padding: 3em;
+    margin-bottom: 12px;
+}
+
+footer {
+    background-color: #B4E1FB;
+    padding: 20px;
+    margin: -13px;
+    margin-top: 200px;
+    color: black;
+    overflow: hidden;
+}
+
+nav {
+    list-style-type: none;
+}
+
+.socialmedia {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .socialmedia li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+        .socialmedia li:last-child {
+            margin-right: 0;
+        }
+
+footer .contatos {
+    margin-bottom: 10px;
+}
+
+footer .local {
+    left: 500px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.person-details.visible {
+    display: block;
+}
+
+.person-details p {
+    margin: 30px; /* Espaçamento entre os parágrafos */
+    text-align: center;
+}
